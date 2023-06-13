@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Package - RelativeDate - Documentação</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="menu-top"></div>
+    
+    <!-- Conteúdo Página -->
+    <div class="container mt-4">
+        <section id="menu">
+            <h3>Documentação</h3>
+            <ul class="mt-3">
+                <li><a href="#instalacao" class="text-dark">Instalação</a></li>
+                <li><a href="#criando_objeto_rd" class="text-dark">Criando um objeto RelativeDate</a></li>  
+                <li><a href="#addyear" class="text-dark">Método addYear()</a></li>  
+                <li><a href="#addmonth" class="text-dark">Método addMonth()</a></li>
+                <li><a href="#addday" class="text-dark">Método addDay()</a></li>
+                <li><a href="#add" class="text-dark">Método add()</a></li>
+                <li><a href="#datediff" class="text-dark">Método dateDiff()</a></li>
+                <li><a href="#lastday" class="text-dark">Método lastDay()</a></li>
+                <li><a href="#lastdate" class="text-dark">Método lastDate()</a></li>
+                <li><a href="#utildays" class="text-dark">Método utilDays()</a></li>
+                <li><a href="#getutilday" class="text-dark">Método getUtilDay()</a></li>
+            </ul>
+        </section>       
+        
+
+        <section id="documentacao" class="mt-3">
+            <div class="row">
+
+                <div class="col-12" id="instalacao">
+                    <hr>
+                    <h5>Instalação</h5>
+                    <p>
+                        Para Instalar a biblioteca RelativeDate, basta abrir o terminal e instalar via pip, digitando o seguinte comando:
+                    </p>
+                    <div class="border p-2 bg-dark text-white">
+                        pip install relativedate
+                    </div>
+                    <hr>
+                </div>
+
+                <div class="col-12" id="criando_objeto_rd">
+                    <h5>Criando um objeto RelativeDate</h5>
+                    <p>
+                        Um objeto RelativeDate pode ser instanciado de duas formas, sendo:
+                    </p>
+                    <p>
+                        1. Instanciando sem argumento, isso irá gerar um objeto RelativeDate com o atributo datetime com a data e hora do momento que instanciar o Objeto
+                        para isso, basta digitar o código abaixo:
+                    </p>
+                    <div class="border p-2 bg-dark text-white">
+                        from relativedate import RelativeDate <br><br>
+                        rd = RelativeDate() <br>
+                        print(rd.datetime)<br><br>
+                    </div>
+                    <div class="border p-2 bg-secondary text-white mt-2">
+                        RETORNO: <br>
+                        2023-05-07 21:00:00
+                    </div>
+                    <p>*** Supondo que foi o objeto foi instanciado no dia 23/05/2023 às 21:00hs</p>
+                    <p class="mt-2">
+                        2. Instanciando a partir de um datetime, o objeto RelativeDate pode receber como argumento um datetime, com isso será gerado o objeto RelativeDate 
+                        com o atributo datetime com os dados do objeto datetime passado no argumento, vamos para o exemplo abaixo:
+                    </p>
+                    <div class="border p-2 bg-dark text-white">
+                        from datetime import datetime <br>
+                        from relativedate import RelativeDate <br><br>
+                        dt = datetime(year=2023, month=5, day=5) <br>
+                        rd = RelativeDate(dt) <br>
+                        print(rd.datetime)<br><br>
+                    </div>
+                    <div class="border p-2 bg-secondary text-white mt-2">
+                        RETORNO: <br>
+                        2023-05-05 00:00:00
+                    </div>
+                    <hr>
+                </div>
+
+                <div class="col-12" id="addyear">
+                    <h5>Método addYear(relative_year)</h5>
+                    <p>
+                        O Método addYear irá alterar o ano do atributo datetime do objeto RelativeDate de acordo com o parametro <i>relative_year</i>, segue abaixo um exemplo de uso:
+                    </p>
+                    <div class="border p-2 bg-dark text-white">
+                        from datetime import datetime <br>
+                        from relativedate import RelativeDate <br><br>
+                        dt = datetime(year=2023, month=5, day=5) <br>
+                        rd = RelativeDate(dt) <br>
+                        print(rd.datetime)<br><br>
+                        rd.addYear(-1) <br>
+                        print(rd.datetime)<br><br>
+                        rd.addYear(3) <br>
+                        print(rd.datetime)<br><br>
+                    </div>
+                    <div class="border p-2 bg-secondary text-white mt-2">
+                        RETORNO: <br>
+                        2023-05-05 00:00:00<br>
+                        2022-05-05 00:00:00<br>
+                        2025-05-05 00:00:00<br>
+                    </div>
+                    <hr>
+                </div>
+
+                <div class="col-12" id="addmonth">
+                    <h5>Método addMonth(relative_month)</h5>
+                    <p>
+                        O Método addMonth irá alterar o mês do atributo datetime do objeto RelativeDate de acordo com o parametro <i>relative_month</i>, segue abaixo um exemplo de uso:
+                    </p>
+                    <div class="border p-2 bg-dark text-white">
+                        from datetime import datetime <br>
+                        from relativedate import RelativeDate <br><br>
+                        dt = datetime(year=2023, month=5, day=5) <br>
+                        rd = RelativeDate(dt) <br>
+                        print(rd.datetime)<br><br>
+                        rd.addMonth(-7) <br>
+                        print(rd.datetime)<br><br>
+                        rd.addMonth(10) <br>
+                        print(rd.datetime)<br><br>
+                    </div>
+                    <div class="border p-2 bg-secondary text-white mt-2">
+                        RETORNO: <br>
+                        2023-05-05 00:00:00<br>
+                        2022-10-05 00:00:00<br>
+                        2023-08-05 00:00:00<br>
+                    </div>
+                    <hr>
+                </div>
+
+                <div class="col-12" id="addday">
+                    <h5>Método addDay(relative_day)</h5>
+                    <p>
+                        O Método addDay irá alterar o dia do atributo datetime do objeto RelativeDate de acordo com o parametro <i>relative_day</i>, segue abaixo um exemplo de uso:
+                    </p>
+                    <div class="border p-2 bg-dark text-white">
+                        from datetime import datetime <br>
+                        from relativedate import RelativeDate <br><br>
+                        dt = datetime(year=2023, month=5, day=5) <br>
+                        rd = RelativeDate(dt) <br>
+                        print(rd.datetime)<br><br>
+                        rd.addDay(-27) <br>
+                        print(rd.datetime)<br><br>
+                        rd.addDay(40) <br>
+                        print(rd.datetime)<br><br>
+                    </div>
+                    <div class="border p-2 bg-secondary text-white mt-2">
+                        RETORNO: <br>
+                        2023-05-05 00:00:00<br>
+                        2023-04-10 00:00:00<br>
+                        2023-05-20 00:00:00<br>
+                    </div>
+                    <hr>
+                </div>
+
+                <div class="col-12" id="add">
+                    <h5>Método add(year, month, day, hour, minute, second)</h5>
+                    <p>
+                        O Método add irá alterar os atributos year, month, day, hour, minute e second do datetime do objeto RelativeDate de acordo com o parametros acima, nenhum parâmetro é obrigatório, em caso de não explicitar o mesmo será considerado com o valor de <i>0</i>, segue abaixo um exemplo de uso:
+                    </p>
+                    <div class="border p-2 bg-dark text-white">
+                        from datetime import datetime <br>
+                        from relativedate import RelativeDate <br><br>
+                        dt = datetime(year=2022, month=9, day=2) <br>
+                        rd = RelativeDate(dt) <br>
+                        print(rd.datetime)<br><br>
+                        rd.add(year=10, month=1, day=5) <br>
+                        print(rd.datetime)<br><br>
+                    </div>
+                    <div class="border p-2 bg-secondary text-white mt-2">
+                        RETORNO: <br>
+                        2022-09-05 00:00:00<br>
+                        2023-10-07 00:00:00<br>
+                    </div>
+                    <hr>
+                </div>
+
+                <div class="col-12" id="datediff">
+                    <h5>Método dateDiff(datetime)</h5>
+                    <p>
+                        O Método dateDiff irá retornar um objeto timedelta com a distância do atributo datetime do objeto RelativeDate com o do parâmetro<i>datetime</i> passado nO Método, segue abaixo um exemplo de uso:
+                    </p>
+                    <div class="border p-2 bg-dark text-white">
+                        from datetime import datetime <br>
+                        from relativedate import RelativeDate <br><br>
+                        dt = datetime(year=2022, month=9, day=2)<br>
+                        dt2 = datetime(year=2023, month=5, day=20)<br><br>
+                        rd = RelativeDate(dt)<br>
+                        print(rd.datetime)<br>
+                        print(dt2)<br><br>
+                        date_diff = rd.dateDiff(dt2)<br>
+                        print(date_diff)<br>
+                    </div>
+                    <div class="border p-2 bg-secondary text-white mt-2">
+                        RETORNO: <br>
+                        2022-09-02 00:00:00<br>
+                        2023-05-20 00:00:00<br>
+                        260 days, 0:00:00<br>
+                    </div>
+                    <hr>
+                </div>
+
+                <div class="col-12" id="lastday">
+                    <h5>Método lastDay()</h5>
+                    <p>
+                        O Método lastDay irá retornar o último dia do mês, segue abaixo um exemplo de uso:
+                    </p>
+                    <div class="border p-2 bg-dark text-white">
+                        from datetime import datetime <br>
+                        from relativedate import RelativeDate <br><br>
+                        dt = datetime(year=2022, month=9, day=2)<br>
+                        rd = RelativeDate(dt)<br>
+                        print(rd.datetime)<br>
+                        print(rd.lastDay())<br>
+                    </div>
+                    <div class="border p-2 bg-secondary text-white mt-2">
+                        RETORNO: <br>
+                        2022-09-02 00:00:00<br>
+                        30<br>
+                    </div>
+                    <hr>
+                </div>
+
+                <div class="col-12" id="lastdate">
+                    <h5>Método lastDate()</h5>
+                    <p>
+                        O Método lastDate irá retornar um objeto datetime com o dia alterado para o último dia do mês do atributo do datetime do objeto RelativeDate, segue abaixo um exemplo de uso:
+                    </p>
+                    <div class="border p-2 bg-dark text-white">
+                        from datetime import datetime <br>
+                        from relativedate import RelativeDate <br><br>
+                        dt = datetime(year=2022, month=9, day=2)<br>
+                        rd = RelativeDate(dt)<br>
+                        print(rd.datetime)<br>
+                        print(rd.lastDate())<br>
+                    </div>
+                    <div class="border p-2 bg-secondary text-white mt-2">
+                        RETORNO: <br>
+                        2022-09-02 00:00:00<br>
+                        2022-09-30 00:00:00<br>
+                    </div>
+                    *** O Método lastDate() não altera o valor do atribuito datetime do objeto RelativeDate
+                    <hr>
+                </div> 
+
+                <div class="col-12" id="utildays">
+                    <h5>Método utilDays(disregard=[])</h5>
+                    <p>
+                        O Método utilDays irá retornar a quantidade de dias úteis no mês, podendo passar uma lista para desconsiderar com dia útil, usado por exemplo para feriados, segue abaixo um exemplo de uso:
+                    </p>
+                    <div class="border p-2 bg-dark text-white">
+                        from datetime import datetime <br>
+                        from relativedate import RelativeDate <br><br>
+                        dt = datetime(year=2022, month=9, day=2)<br>
+                        rd = RelativeDate(dt)<br><br>
+                        print(rd.utilDays())<br>
+                        print(rd.utilDays([5,19]))
+                    </div>
+                    <div class="border p-2 bg-secondary text-white mt-2">
+                        RETORNO: <br>
+                        21<br>
+                        19<br>
+                    </div>
+                    <hr>
+                </div>  
+
+                <div class="col-12" id="getutilday">
+                    <h5>Método getUtilDay(util_day, disregard=[], last_day=False)</h5>
+                    <p>
+                        O Método utilDays irá retornar a data útil referente ao dia útil solicitado dentro do mês do atribuito datetime, o dia útil é passado no argumento <i>util_day</i>, pode se passar uma lista também no argumento <i>disregard</i> para desconsiderar o dia como útil, se o argumento last_day for True irá retornar o último dia útil caso o retorno seja None, segue abaixo um exemplo de uso:
+                    </p>
+                    <div class="border p-2 bg-dark text-white">
+                        from datetime import datetime <br>
+                        from relativedate import RelativeDate <br><br>
+                        dt = datetime(year=2022, month=9, day=2)<br>
+                        rd = RelativeDate(dt)<br><br>
+                        print(rd.getUtilDay(8))<br>
+                        print(rd.getUtilDay(8, [5,19]))
+                    </div>
+                    <div class="border p-2 bg-secondary text-white mt-2">
+                        RETORNO: <br>
+                        2023-09-12 00:00:00<br>
+                        2023-09-13 00:00:00
+                    </div>
+                    <hr>
+                </div> 
+
+            </div>
+            <a class="voltar-topo" href="#menu-top">Inicio</a>
+        </section>
+
+        
+
+        <div class="row mt-4">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5559049683467540" 
+                crossorigin="anonymous"></script>
+            <!-- Controladoria Drogal -->
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-client="ca-pub-5559049683467540"
+                data-ad-slot="5528650857"
+                data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+        
+    </div>
+    <script src="js/menu_top_site.js"></script>
+</body>
+</html>
